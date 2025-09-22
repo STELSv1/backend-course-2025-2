@@ -1,12 +1,12 @@
 const { URL } = require('url');
 
-const DATE = '2024-08';
-const TIME_PERIOD = 'month';
+const date = "202408";
+const time_period = "m";
 
-const url = new URL('/NBUStatService/v1/stat-directory/profit_loss', 'https://bank.gov.ua/');
+const base = "https://bank.gov.ua/NBUStatService/v1/statdirectory/FinResultsOfBanks.json";
 
-url.searchParams.set('date', DATE);
-url.searchParams.set('time_period', TIME_PERIOD);
-url.searchParams.set('json', '');
+const url = new URL(base);
+url.searchParams.append("date", date);
+url.searchParams.append("period", time_period);
 
 console.log(url.toString());
